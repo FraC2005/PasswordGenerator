@@ -1,0 +1,230 @@
+.password-container {
+  background-color: #1e293b;
+  padding: 2.5rem;
+  border-radius: 2rem;
+  box-shadow: 0 15px 40px rgba(0, 0, 0, 0.6);
+  width: 100%;
+  max-width: 480px;
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
+  animation: fadeIn 0.4s ease-out;
+  backdrop-filter: blur(4px);
+}
+
+.subtitle {
+  font-size: 1.5rem;
+  font-weight: 500;
+  text-align: center;
+  color: #c7d2fe;
+  letter-spacing: 0.5px;
+}
+
+.password-box {
+  display: flex;
+  border-radius: 1rem;
+  overflow: hidden;
+  border: 1px solid #334155;
+  background-color: #0f172a;
+}
+
+.password-box input {
+  flex: 1;
+  padding: 1rem 1.2rem;
+  border: none;
+  background: transparent;
+  color: #f8fafc;
+  font-size: 1rem;
+  letter-spacing: 1px;
+  outline: none;
+}
+
+.password-box .reload {
+  background-color: #334155;
+  border: none;
+  padding: 0 1.2rem;
+  font-size: 1.5rem;
+  color: #a5b4fc;
+  cursor: pointer;
+  transition: background 0.2s;
+}
+
+.password-box .reload:hover {
+  background-color: #475569;
+}
+
+.button-group {
+  display: flex;
+  gap: 1rem;
+  justify-content: center;
+  flex-wrap: wrap;
+}
+
+button {
+  padding: 0.8rem 1.5rem;
+  border: none;
+  border-radius: 0.75rem;
+  font-size: 0.95rem;
+  font-weight: 500;
+  cursor: pointer;
+  transition: all 0.25s ease;
+}
+
+.copy-btn {
+  background-color: transparent;
+  color: #a5b4fc;
+  border: 1px solid #475569;
+}
+
+.copy-btn:hover {
+  background-color: #334155;
+}
+
+.generate-btn {
+  background: linear-gradient(135deg, #6366f1, #4f46e5);
+  color: white;
+  box-shadow: 0 3px 10px rgba(99, 102, 241, 0.4);
+}
+
+.generate-btn:disabled {
+  opacity: 0.5;
+  cursor: not-allowed;
+}
+
+.spinner {
+  width: 20px;
+  height: 20px;
+  border: 3px solid #a5b4fc;
+  border-top: 3px solid transparent;
+  border-radius: 50%;
+  animation: spin 0.8s linear infinite;
+  margin: auto;
+}
+
+.tooltip.success {
+  background-color: #22c55e;
+  color: #f0fdf4;
+  padding: 0.6rem 1.2rem;
+  border-radius: 0.6rem;
+  text-align: center;
+  font-size: 0.95rem;
+  animation: fadeIn 0.3s ease-out;
+}
+
+.lenght-selector label {
+  text-align: center;
+  display: block;
+  font-size: 0.95rem;
+  color: #cbd5e1;
+  margin-bottom: 0.5rem;
+}
+
+.slider-group {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 1rem;
+}
+
+.slider-group button {
+  width: 44px;
+  height: 44px;
+  border-radius: 50%;
+  background-color: transparent;
+  border: 2px solid #475569;
+  color: #a5b4fc;
+  font-size: 1.4rem;
+  font-weight: bold;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  transition: background-color 0.2s, transform 0.2s;
+}
+
+.slider-group button:hover {
+  background-color: rgba(255, 255, 255, 0.05);
+  transform: scale(1.08);
+}
+
+input[type="range"] {
+  width: 180px;
+  accent-color: #6366f1;
+  cursor: pointer;
+}
+
+.character-options label {
+  display: block;
+  text-align: center;
+  margin-bottom: 0.5rem;
+  font-size: 0.95rem;
+  color: #cbd5e1;
+}
+
+.options {
+  display: flex;
+  justify-content: center;
+  gap: 1.5rem;
+  flex-wrap: wrap;
+}
+
+.options label {
+  display: flex;
+  align-items: center;
+  gap: 0.4rem;
+  font-size: 0.95rem;
+  color: #e2e8f0;
+}
+
+input[type="checkbox"] {
+  width: 18px;
+  height: 18px;
+  accent-color: #4f46e5;
+  cursor: pointer;
+  transform: scale(1.1);
+}
+
+/* Animazioni */
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(12px);
+  }
+  to {
+    opacity: 1;
+    transform: none;
+  }
+}
+
+@keyframes spin {
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+/* Responsive */
+@media (max-width: 480px) {
+  .password-container {
+    padding: 1.5rem;
+    gap: 1.5rem;
+  }
+
+  .slider-group {
+    flex-direction: column;
+    gap: 0.8rem;
+  }
+
+  .options {
+    flex-direction: column;
+    gap: 1rem;
+  }
+
+  .button-group {
+    flex-direction: column;
+    gap: 1rem;
+  }
+
+  .subtitle {
+    font-size: 1.25rem;
+  }
+}

@@ -1,0 +1,57 @@
+<div class="password-container">
+  <p class="subtitle">Crea una password sicura</p>
+
+  <div class="password-box">
+    <input type="text" [value]="password" readonly />
+    <!-- <button class="reload" (click)="generatePassword()">
+      <span>+</span>
+    </button> -->
+  </div>
+
+  <div class="button-group">
+    <button class="copy-btn" (click)="copyToClipboard()">
+      {{ copyLabel }}
+    </button>
+
+    <button
+      class="generate-btn"
+      (click)="generatePassword()"
+      [disabled]="loading"
+    >
+      <span *ngIf="!loading">Genera</span>
+      <span *ngIf="loading" class="spinner"></span>
+    </button>
+
+    <button
+      class="generate-btn"
+      (click)="generatePasswordAPI()"
+      [disabled]="loading"
+    >
+      <span *ngIf="!loading">Genera con API</span>
+      <span *ngIf="loading" class="spinner"></span>
+    </button>
+  </div>
+
+  <div class="tooltip success" *ngIf="copied">
+    <span>Copiato negli appunti.</span>
+  </div>
+
+  <div class="lenght-selector">
+    <label
+      >Lunghezza password: <strong>{{ length }}</strong></label
+    >
+    <div class="slider-group">
+      <button (click)="decreaseLenght()">-</button>
+      <input type="range" [(ngModel)]="length" min="4" max="50" />
+      <button (click)="increaseLenght()">-</button>
+    </div>
+  </div>
+
+  <div class="character-options">
+    <label>Carattere utilizzato: </label>
+    <div class="options">
+      <label><input type="checkbox" [(ngModel)]="includeNumbers" />123</label>
+      <label><input type="checkbox" [(ngModel)]="includeSymbols" />#$%</label>
+    </div>
+  </div>
+</div>
